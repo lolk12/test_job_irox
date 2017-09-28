@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test</title>
+	<link rel="stylesheet" type="text/css" href="static/assets/stylesheet/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="static/assets/stylesheet/jquery-ui.theme.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet">
+	<link rel="stylesheet" href="static/assets/stylesheet/main.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<input type="text" id="search" title="Поиск сотрудников " placeholder="Иванов Иван Иванович">
+			<button id="search_button">Найти</button>
+		</nav>
+	</header>
+		<button class="modal">Добавить сотрудника</button>
+	<div class="table">
+		<table>
+			<thead>
+				<tr>
+					<td id="sort_deportment" class="pointer" title="Сортировать по отделам">Отдел</td>
+					<td id="sort_name" class="pointer" title="Сортировать по ФИО">ФИО</td>
+					<td>Дата рождения</td>
+					<td>Должность</td>
+					<td id="sort_status" class="pointer" title="Сортировать по статусу">Статус</td>
+					<td>Кнопки</td>
+				</tr>
+			</thead>
+
+		</table>
+	</div>
+
+	<div id="modal_form">
+		<span id="modal_close">закрыть</span>
+	</div>
+	<div id="overlay"></div>
+
+	<input id="datepicker">
+	<input id="name">
+	<script src="static/assets/js/jquery.js"></script>
+	<script src="static/assets/js/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+	<script type="text/javascript" src="static/assets/js/main.js">	</script>
+
+</body>
+</html>

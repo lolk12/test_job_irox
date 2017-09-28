@@ -1,0 +1,90 @@
+[
+	{
+		"id": 1,
+		"firstName": "Иван",
+		"lastName": "Иванов",
+		"surname": "Иванович",
+		"datePerson": "31.12.1992",
+		"deportment": "Охрана",
+		"position": "Охранник",
+		"phone_number": "89195377324",
+		"status": false
+	},
+	{
+		"id": 2,
+		"firstName": "Инна",
+		"lastName": "Минаева",
+		"surname": "Серафимовна",
+		"datePerson": "31.12.1965",
+		"deportment": "Офис",
+		"position": "Начальник",
+		"phone_number": "89112377390",
+		"status": true
+	},
+	{
+		"id": 4,
+		"firstName": "Прохор",
+		"lastName": "Евдокимов",
+		"surname": "Моисеевич",
+		"datePerson": "31.04.1975",
+		"deportment": "Офис",
+		"position": "Менеджер",
+		"phone_number": "85112377324",
+		"status": true
+	},
+	{
+		"id": 5,
+		"firstName": "Джон",
+		"lastName": "Доуе",
+		"surname": "",
+		"datePerson": "31.12.1984",
+		"deportment": "Склад",
+		"position": "Кладовщик",
+		"phone_number": "89112334324",
+		"status": true
+	},
+	{
+		"id": 3,
+		"firstName": "Давид",
+		"lastName": "Шелыгин",
+		"surname": "Леонтиевич",
+		"datePerson": "31.12.1965",
+		"deportment": "Офис",
+		"position": "Менеджер",
+		"phone_number": "89112367324",
+		"status": false
+	},
+	{
+		"id": 6,
+		"firstName": "Всеслав",
+		"lastName": "Юганцев",
+		"surname": "Яковович",
+		"datePerson": "31.12.1934",
+		"deportment": "Склад",
+		"position": "Приёмщик",
+		"phone_number": "89125377324",
+		"status": false
+	},
+	{
+		"id": 7,
+		"firstName": "Анатолий",
+		"lastName": "Ядрышников",
+		"surname": "Касьянович",
+		"datePerson": "31.12.1975",
+		"deportment": "Склад",
+		"position": "Приёмщик",
+		"phone_number": "89112324324",
+		"status": true
+	},
+	{
+		"id": 8,
+		"firstName": "Франц",
+		"lastName": "Кафка",
+		"surname": "",
+		"datePerson": "03.07.1992",
+		"deportment": "Охрана",
+		"position": "Охранник",
+		"phone_number": "89112377324",
+		"status": true
+	}
+]

@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 16px;
+    font-family: 'Ubuntu Mono', monospace;
+}
+.pointer:hover{
+    cursor: pointer;
+}
+/*****************************************************Header Style BEGIN*****************************************/
+header{
+    font-family: 'Ubuntu', sans-serif;
+    overflow: hidden;
+    height: 60px;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+}
+header nav #search{
+    width:60%;
+    font-size: 14px;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 10px 11%;
+    display: block;
+    height: 30px;
+    border: none;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+    padding-left: 10px;
+}
+header nav button{
+    font-family:"Ubuntu Mono";
+    font-size: 16px;
+    height: 27px;
+    width: 8%;
+    float: right;
+    position: relative;
+    right: 16%;
+    bottom: 37px;
+    background-color: #fff;
+    outline: none;
+    border: none;
+    transition: .5s;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+}
+header nav button:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+/*******************************************************Header Style END**************************************************/
+
+/*******************************************************Style table BEGIN*********************************************/
+.table{
+    width:80%;
+    margin: 40px auto;
+}
+.table table{
+    border-collapse: collapse;
+    border-spacing: 0px 0px;
+    width:100%;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+}
+.table thead{
+    font-weight: bold;
+}
+.table td{
+    margin: 10px;
+    border-left: 1px solid #dfdfdf;
+    width: 16%;
+    text-align: center;
+    padding: 7px 0 ;
+    border-top: 1px solid #e4e4e4;
+}
+.table td:first-child{
+    border-left: none;
+}
+.table tr{
+}
+.cloneLastItem{
+    border-top: none !important;
+}
+.active-button span:hover{
+    cursor: pointer;
+}
+/**********************************************Style table END******************************************/
+#modal_form {
+    width: 60%;
+    height: 70vh;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: -15% auto;
+    display: none;
+    opacity: 0;
+    z-index: 5;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+}
+
+#modal_form #modal_close {
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    top: 5px;
+    right: 43px;
+    cursor: pointer;
+    display: block;
+}
+
+#overlay {
+    z-index:3;
+    position:fixed;
+    background-color:#000;
+    opacity:0.8;
+    -moz-opacity:0.8;
+    filter:alpha(opacity=80);
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    cursor:pointer;
+    display:none;
+}
+.content{
+    margin-top: 20px;
+    text-align: center;
+
+}
+.content > input{
+    width: 200px;
+    height: 20px;
+    margin: 10px auto;
+    display: block;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    outline: none;
+    border: none;
+    padding:5px 10px;
+    background-color: #fff;
+}
+.content > select{
+    padding: 0px 10px;
+    width: 220px;
+    height: 20px;
+    margin: 10px auto;
+    display: block;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    outline: none;
+    border: none;
+    background-color: #fff;
+}
+.content > button{
+    width: 250px;
+    height: 30px;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+.content > button:focus{
+    outline: none;
+}
+.content > button:hover{
+    cursor: pointer;
+}
+.error{
+    transition: .5s;
+    box-shadow: 0 0px 8px 0 #f1a899 !important;
+
+}
