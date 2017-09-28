@@ -84,6 +84,7 @@ $(document).ready(function() {
                     });
 				let dataForm = model.getDataForm(true);
                 model.changePersonStore(dataForm,id);
+                controller.search();
             });
 			$('#search_button').on('click',function () {
 				controller.searchPersonInput()
@@ -103,6 +104,7 @@ $(document).ready(function() {
                 let dataForm = model.getDataForm(true);
 			    model.shiftPerson(dataForm,id);
 			    console.log(id);
+                controller.search();
             });
 
         }());
@@ -173,9 +175,9 @@ $(document).ready(function() {
 					<td class="position">${obj.position}</td>
 					<td class="status">${ obj.status === true ? 'Работает': 'Уволен'}</td>
 					<td class="active-button">
-						<span id="shift">Переместить</span><br>
-						<span id="change">Редактировать</span>
-						${obj.status === true ? "<span class='change_status'>Уволить</span>" : "<span class='change_status'>Востановить</span>"}
+						<span id="shift" title="Переместить сотрудника в другой отдел">Переместить</span><br>
+						<span id="change" title="Редактировать сотрудника">Редактировать</span>
+						${obj.status === true ? "<span class='change_status' title='Уволить сотрудника'>Уволить</span>" : "<span class='change_status' title='Востановить сотрудника'>Востановить</span>"}
 					</td>
 				</tr>
 			`);
@@ -270,7 +272,8 @@ $(document).ready(function() {
         getDataForm: function (what,idPerson) {  /// Собирает данные с формы и валидирует их return: Object
             let data = {};
             let dataLocalStore = model.getLocalStoreJSON();
-            let id = what ? dataLocalStore.length : idPerson;
+            let id = what === true ? dataLocalStore.length  : idPerson;
+            console.log(id);
             let selectors = ['input', 'select'];
             let nameAttr;
             let error = false;
@@ -378,12 +381,12 @@ $(document).ready(function() {
 
 	/************************************Controller BEGIN************************************************/
 	controller = {
-		search: (function () {
+		search: function () {
 			$('#search').autocomletePerson({
                 delay: 0,
 				source: model.getLocalStoreArray(),
 			})
-        }()),
+        },
 		searchPersonInput: function () { // Поиск персоны и сортировка таблици
 			let data = model.getLocalStoreJSON();
 			let valSearch = $('#search').val();
@@ -494,7 +497,7 @@ $(document).ready(function() {
 						<option>Руководитель</option>
 						<option>Менеджер</option>
 					</select>
-					<input type="text" id="phone_mask" name="phone_number" placeholder="Дата рождения">
+					<input type="text" id="phone_mask" name="phone_number" placeholder="Номер телефона">
 					<select id="status" name="status">
 						<option value="true">Работает</option>
 						<option value="false">Уволен</option>
@@ -503,13 +506,14 @@ $(document).ready(function() {
 				</div>
 			`);
 			$('#regPerson').on('click', function () {
-                let dataForm = model.getDataForm();
+                let dataForm = model.getDataForm(true);
                 if (dataForm){
                     let data = model.getLocalStoreJSON();
                     data.push(dataForm);
                     model.changeLocalStore(data);
                     model.refreshAfteSort(data);
-				}else{
+                    controller.search();
+                }else{
                 	return false;
 				}
 
@@ -535,7 +539,7 @@ $(document).ready(function() {
 						<option>Руководитель</option>
 						<option>Менеджер</option>
 					</select>
-					<input type="text" id="phone_mask" name="phone_number" value="${data.phone_number.slice(1)}">
+					<input type="text" id="phone_mask" name="phone_number" placeholder="Номер телефона" value="${data.phone_number.slice(1)}">
 					<select id="status" name="status">
 						<option value="true">Работает</option>
 						<option value="false">Уволен</option>
@@ -591,5 +595,6 @@ $(document).ready(function() {
     view = (function () {
         controller.addTableElements();
         controller.changeStatusPerson();
+        controller.search();
     }());
 });

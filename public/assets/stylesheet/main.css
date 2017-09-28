@@ -46,6 +46,18 @@ header nav button:hover{
     cursor: pointer;
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
+.appPerson{
+    font-family:"Ubuntu Mono";
+    font-size: 16px;
+    height: 44px;
+    width: 300px;
+    margin: 30px auto;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    outline: none;
+    border: none;
+    display: block;
+}
 /*******************************************************Header Style END**************************************************/
 
 /*******************************************************Style table BEGIN*********************************************/
