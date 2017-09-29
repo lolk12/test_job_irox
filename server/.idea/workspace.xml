@@ -16,7 +16,73 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/client/view/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/stylesheet/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="453">
+              <caret line="162" column="19" lean-forward="false" selection-start-line="162" selection-start-column="19" selection-end-line="162" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="person.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/person.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="84" column="19" lean-forward="false" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/assets/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="103" column="47" lean-forward="true" selection-start-line="103" selection-start-column="47" selection-end-line="103" selection-end-column="47" />
+              <folding>
+                <marker date="1506614293033" expanded="true" signature="5006:23620" ph="..." />
+                <marker date="1506614293033" expanded="true" signature="7254:7927" ph="..." />
+                <marker date="1506614293033" expanded="true" signature="7688:7917" ph="..." />
+                <marker date="1506614293033" expanded="true" signature="19444:20502" ph="..." />
+                <marker date="1506614293033" expanded="true" signature="19923:20067" ph="..." />
+                <marker date="1506614293033" expanded="true" signature="20118:20201" ph="..." />
+                <marker date="1506614293033" expanded="true" signature="20330:20434" ph="..." />
+                <marker date="1506614293033" expanded="true" signature="21156:22301" ph="..." />
+                <marker date="1506614293033" expanded="true" signature="21709:21853" ph="..." />
+                <marker date="1506614293033" expanded="true" signature="21904:21987" ph="..." />
+                <marker date="1506614293033" expanded="true" signature="22126:22230" ph="..." />
+                <marker date="1506614293033" expanded="true" signature="22566:22989" ph="..." />
+                <marker date="1506614293033" expanded="true" signature="22621:22765" ph="..." />
+                <marker date="1506614293033" expanded="true" signature="22816:22899" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -60,7 +126,9 @@
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
@@ -72,8 +140,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="121" />
     <option name="y" value="109" />
     <option name="width" value="1221" />
@@ -136,7 +207,7 @@
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app.js" />
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="javascript.nodejs.core.library.configured.version" value="8.5.0" />
     <property name="JavaScriptPreferStrict" value="false" />
@@ -182,15 +253,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1506369459454</updated>
-      <workItem from="1506369460769" duration="99680000" />
+      <workItem from="1506369460769" duration="99221000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99680000" />
+    <option name="totallyTimeSpent" value="99221000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="30" width="1366" height="738" extended-state="6" />
+    <frame x="0" y="30" width="1366" height="738" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -255,6 +327,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/client/view/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/person.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -267,15 +347,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="103" column="47" lean-forward="true" selection-start-line="103" selection-start-column="47" selection-end-line="103" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/client/view/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-          <folding />
+          <folding>
+            <marker date="1506614293033" expanded="true" signature="5006:23620" ph="..." />
+            <marker date="1506614293033" expanded="true" signature="7254:7927" ph="..." />
+            <marker date="1506614293033" expanded="true" signature="7688:7917" ph="..." />
+            <marker date="1506614293033" expanded="true" signature="19444:20502" ph="..." />
+            <marker date="1506614293033" expanded="true" signature="19923:20067" ph="..." />
+            <marker date="1506614293033" expanded="true" signature="20118:20201" ph="..." />
+            <marker date="1506614293033" expanded="true" signature="20330:20434" ph="..." />
+            <marker date="1506614293033" expanded="true" signature="21156:22301" ph="..." />
+            <marker date="1506614293033" expanded="true" signature="21709:21853" ph="..." />
+            <marker date="1506614293033" expanded="true" signature="21904:21987" ph="..." />
+            <marker date="1506614293033" expanded="true" signature="22126:22230" ph="..." />
+            <marker date="1506614293033" expanded="true" signature="22566:22989" ph="..." />
+            <marker date="1506614293033" expanded="true" signature="22621:22765" ph="..." />
+            <marker date="1506614293033" expanded="true" signature="22816:22899" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

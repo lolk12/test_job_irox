@@ -1,5 +1,6 @@
 $(document).ready(function() {
     appRoot = function () {
+        numberOfList = 0;
         init: {
             autocompletePerson: (function () {  //Кастомный AutoComlete
                 $.widget("custom.autocomletePerson", $.ui.autocomplete, {
@@ -85,6 +86,7 @@ $(document).ready(function() {
 				let dataForm = model.getDataForm(true);
                 model.changePersonStore(dataForm,id);
                 controller.search();
+
             });
 			$('#search_button').on('click',function () {
 				controller.searchPersonInput()
@@ -105,7 +107,13 @@ $(document).ready(function() {
 			    model.shiftPerson(dataForm,id);
 			    console.log(id);
                 controller.search();
+
             });
+            $('.buttonList').on('click','a', function() {
+                $('.buttonList').empty('a');
+                let numberOfList = $(this).text();
+                model.refreshAfteSort(false, numberOfList);
+            })
 
         }());
         /**************************************Event END**********************************************************/
@@ -175,9 +183,9 @@ $(document).ready(function() {
 					<td class="position">${obj.position}</td>
 					<td class="status">${ obj.status === true ? 'Работает': 'Уволен'}</td>
 					<td class="active-button">
-						<span id="shift" title="Переместить сотрудника в другой отдел">Переместить</span><br>
-						<span id="change" title="Редактировать сотрудника">Редактировать</span>
-						${obj.status === true ? "<span class='change_status' title='Уволить сотрудника'>Уволить</span>" : "<span class='change_status' title='Востановить сотрудника'>Востановить</span>"}
+						<span id="shift">Переместить</span><br>
+						<span id="change">Редактировать</span>
+						${obj.status === true ? "<span class='change_status'>Уволить</span>" : "<span class='change_status'>Востановить</span>"}
 					</td>
 				</tr>
 			`);
@@ -243,10 +251,9 @@ $(document).ready(function() {
                 return 0;
             }
         },
-		refreshAfteSort: function (person) {  // Обновление таблици с новой сортировкой
-            model.changeLocalStore(person);
+		refreshAfteSort: function (person,that) {  // Обновление таблици с новой сортировкой
             $('.table table > tr').detach();
-            controller.addTableElements();
+            controller.addTableElements(person,that);
         },
         funcModelForm: function (cb) {  /// Функционал модального окна
             $('#overlay').fadeIn(400, function () {
@@ -272,8 +279,7 @@ $(document).ready(function() {
         getDataForm: function (what,idPerson) {  /// Собирает данные с формы и валидирует их return: Object
             let data = {};
             let dataLocalStore = model.getLocalStoreJSON();
-            let id = what === true ? dataLocalStore.length  : idPerson;
-            console.log(id);
+            let id = what === true ? dataLocalStore.length + 1 : idPerson;
             let selectors = ['input', 'select'];
             let nameAttr;
             let error = false;
@@ -403,20 +409,37 @@ $(document).ready(function() {
 			model.languageValidate('#firstName',15);
             model.languageValidate('#lastName',15);
         }(),
-
-		addTableElements: function () { // Создать таблицу
-			let data = model.getLocalStoreJSON();
+        addButton : function(n) {
+            $('.buttonList').append(`<span><a href="/#${n}">${n}</a></span>`);
+        },
+		addTableElements: function (getData, number) { // Создать таблицу
+	        let data = !getData ? model.getLocalStoreJSON() : getData;
+            appRoot.numberOfList = Math.ceil(data.length / 5);
+            if(number){
+                appRoot.numberList = number;
+                console.log('ЕСТЬ ЧИСЛО')
+            }else{
+                appRoot.numberList = parseInt(location.hash.slice(1)) ? +location.hash.slice(1) : 1;
+            }
+            let i = !(appRoot.numberList < 2) ? (appRoot.numberList * 5) - 5 : 0;
+            let numberOf = i+5;
+            console.log(i);
 			let lastData = '';
-			for (let i of data){
-				if (lastData === i.deportment){
-                    lastData = i.deportment;
-					i.cloneLastItem = true;
-                    model.addTableElement(i);
+			for (i; i < numberOf; i++){
+                console.log(i);
+				if (lastData === data[i].deportment){
+                    lastData = data[i].deportment;
+                    data[i].cloneLastItem = true;
+                    model.addTableElement(data[i]);
                 }else{
-                    lastData = i.deportment;
-                    model.addTableElement(i);
+                    lastData = data[i].deportment;
+                    model.addTableElement(data[i]);
                 }
 			}
+
+            for(let z = 1; z < (appRoot.numberOfList+1) ; z++){
+                this.addButton(z);
+            }
         },
 		changeStatusPerson: function () {  // Изменение статуса персоны в представление
 			$('.table table').on('click','.change_status',function () {
@@ -513,7 +536,7 @@ $(document).ready(function() {
                     model.changeLocalStore(data);
                     model.refreshAfteSort(data);
                     controller.search();
-                }else{
+				}else{
                 	return false;
 				}
 
@@ -539,7 +562,7 @@ $(document).ready(function() {
 						<option>Руководитель</option>
 						<option>Менеджер</option>
 					</select>
-					<input type="text" id="phone_mask" name="phone_number" placeholder="Номер телефона" value="${data.phone_number.slice(1)}">
+					<input type="text" id="phone_mask" name="phone_number" value="${data.phone_number.slice(1)}">
 					<select id="status" name="status">
 						<option value="true">Работает</option>
 						<option value="false">Уволен</option>
