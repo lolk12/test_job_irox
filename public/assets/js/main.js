@@ -413,7 +413,7 @@ $(document).ready(function() {
             model.languageValidate('#lastName',15);
         },
         addButton : function(n) {
-            $('.buttonList').append(`<span><a href="/#${n}">${n}</a></span>`);
+            $('.buttonList').append(`<a href="/#${n}" id="href_${n}">${n}</a>`);
         },
 		addTableElements: function (getData, number) { // Создать таблицу
 	        let data = !getData ? model.getLocalStoreJSON() : getData;
@@ -440,7 +440,7 @@ $(document).ready(function() {
             for(let z = 1; z < (appRoot.numberOfList+1) ; z++){
                 this.addButton(z);
             }
-
+            $('#href_'+appRoot.numberList).addClass('active_href');
         },
 		changeStatusPerson: function () {  // Изменение статуса персоны в представление
 			$('.table table').on('click','.change_status',function () {
