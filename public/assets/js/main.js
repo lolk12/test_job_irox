@@ -425,7 +425,7 @@ $(document).ready(function() {
                 appRoot.numberList = parseInt(location.hash.slice(1)) ? +location.hash.slice(1) : 1;
             }
             let i = !(appRoot.numberList < 2) ? (appRoot.numberList * 5) - 5 : 0;
-            let numberOf = (i === 0) ? 5 : (data.length - appRoot.numberOfList*5) < 0 ? data.length : appRoot.numberOfList*5 + 1;
+            let numberOf = (i === 0) ? 5 : (data.length - appRoot.numberList * 5) < 0 ? data.length : appRoot.numberList * 5 ;
             let lastData = '';
 			for (i; i < numberOf; i++){
 				if (lastData === data[i].deportment){
