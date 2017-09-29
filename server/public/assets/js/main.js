@@ -252,8 +252,9 @@ $(document).ready(function() {
             }
         },
 		refreshAfteSort: function (person,that) {  // Обновление таблици с новой сортировкой
+            $('.buttonList').empty('a');
             $('.table table > tr').detach();
-            controller.addTableElements(person,that);
+            controller.addTableElements(person,numberOfList);
         },
         funcModelForm: function (cb) {  /// Функционал модального окна
             $('#overlay').fadeIn(400, function () {
@@ -292,7 +293,7 @@ $(document).ready(function() {
                         data[nameAttr] = !!$(el).val();
 					}else if(nameAttr === 'phone_number'){
                         let phoneForm = $(el).val().replace(/[^0-9]/g,'');
-                        if(!what){
+                        if(what){
                             if(model.checkValidPhone(phoneForm, dataLocalStore)){
                                 $(el).addClass('error');
                                 error = true;
@@ -326,7 +327,7 @@ $(document).ready(function() {
 
                 });
             }
-			if(!what){
+			if(what){
                 if (error) return null;
             }
 			return data;
@@ -408,7 +409,7 @@ $(document).ready(function() {
 		validateInput: function () { // Валидация инпутов
 			model.languageValidate('#firstName',15);
             model.languageValidate('#lastName',15);
-        }(),
+        },
         addButton : function(n) {
             $('.buttonList').append(`<span><a href="/#${n}">${n}</a></span>`);
         },
