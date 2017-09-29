@@ -111,8 +111,9 @@ $(document).ready(function() {
             });
             $('.buttonList').on('click','a', function() {
                 $('.buttonList').empty('a');
-                let numberOfList = $(this).text();
-                model.refreshAfteSort(false, numberOfList);
+                let numberList = $(this).text();
+                model.refreshAfteSort(false, numberList);     
+
             })
 
         }());
@@ -251,10 +252,11 @@ $(document).ready(function() {
                 return 0;
             }
         },
-		refreshAfteSort: function (person,that) {  // Обновление таблици с новой сортировкой
+		refreshAfteSort: function (person,numberList) {  // Обновление таблици с новой сортировкой
             $('.buttonList').empty('a');
             $('.table table > tr').detach();
-            controller.addTableElements(person,numberOfList);
+            controller.addTableElements(person,numberList);
+
         },
         funcModelForm: function (cb) {  /// Функционал модального окна
             $('#overlay').fadeIn(400, function () {
@@ -418,16 +420,14 @@ $(document).ready(function() {
             appRoot.numberOfList = Math.ceil(data.length / 5);
             if(number){
                 appRoot.numberList = number;
-                console.log('ЕСТЬ ЧИСЛО')
+                console.log('Есть число')
             }else{
                 appRoot.numberList = parseInt(location.hash.slice(1)) ? +location.hash.slice(1) : 1;
             }
             let i = !(appRoot.numberList < 2) ? (appRoot.numberList * 5) - 5 : 0;
-            let numberOf = i+5;
-            console.log(i);
-			let lastData = '';
+            let numberOf = (i === 0) ? 5 : (data.length - appRoot.numberOfList*5) < 0 ? data.length : appRoot.numberOfList*5 + 1;
+            let lastData = '';
 			for (i; i < numberOf; i++){
-                console.log(i);
 				if (lastData === data[i].deportment){
                     lastData = data[i].deportment;
                     data[i].cloneLastItem = true;
@@ -437,10 +437,10 @@ $(document).ready(function() {
                     model.addTableElement(data[i]);
                 }
 			}
-
             for(let z = 1; z < (appRoot.numberOfList+1) ; z++){
                 this.addButton(z);
             }
+
         },
 		changeStatusPerson: function () {  // Изменение статуса персоны в представление
 			$('.table table').on('click','.change_status',function () {
