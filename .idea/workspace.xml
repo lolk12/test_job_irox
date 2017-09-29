@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3391a3be-61c5-4e5a-9994-617f6ed4c2fd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/js/main.js" afterPath="$PROJECT_DIR$/public/assets/js/main.js" />
-    </list>
+    <list default="true" id="3391a3be-61c5-4e5a-9994-617f6ed4c2fd" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,52 +16,7 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/client/view/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="18" column="23" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="45" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/stylesheet/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="52" column="16" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="180" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/assets/js/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3">
-              <caret line="406" column="24" lean-forward="false" selection-start-line="406" selection-start-column="8" selection-end-line="406" selection-end-column="24" />
-              <folding>
-                <marker date="1506684986428" expanded="true" signature="7328:8138" ph="..." />
-                <marker date="1506684986428" expanded="true" signature="7762:8128" ph="..." />
-                <marker date="1506684986428" expanded="true" signature="19689:20748" ph="..." />
-                <marker date="1506684986428" expanded="true" signature="20168:20312" ph="..." />
-                <marker date="1506684986428" expanded="true" signature="20363:20446" ph="..." />
-                <marker date="1506684986428" expanded="true" signature="20576:20680" ph="..." />
-                <marker date="1506684986428" expanded="true" signature="21459:22633" ph="..." />
-                <marker date="1506684986428" expanded="true" signature="22012:22156" ph="..." />
-                <marker date="1506684986428" expanded="true" signature="22207:22290" ph="..." />
-                <marker date="1506684986428" expanded="true" signature="22458:22562" ph="..." />
-                <marker date="1506684986428" expanded="true" signature="22898:23321" ph="..." />
-                <marker date="1506684986428" expanded="true" signature="22953:23097" ph="..." />
-                <marker date="1506684986428" expanded="true" signature="23148:23231" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -88,9 +40,7 @@
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
-    <package-json value="$PROJECT_DIR$/package.json" />
-  </component>
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
@@ -103,7 +53,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
+    <handled-path value="$PROJECT_DIR$/server/node_modules" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
@@ -211,16 +161,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1506614835228</updated>
-      <workItem from="1506614836431" duration="10376000" />
+      <workItem from="1506614836431" duration="10975000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10376000" />
+    <option name="totallyTimeSpent" value="10975000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="121" y="109" width="1366" height="738" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -273,21 +222,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3">
           <caret line="406" column="24" lean-forward="false" selection-start-line="406" selection-start-column="8" selection-end-line="406" selection-end-column="24" />
-          <folding>
-            <marker date="1506684986428" expanded="true" signature="7328:8138" ph="..." />
-            <marker date="1506684986428" expanded="true" signature="7762:8128" ph="..." />
-            <marker date="1506684986428" expanded="true" signature="19689:20748" ph="..." />
-            <marker date="1506684986428" expanded="true" signature="20168:20312" ph="..." />
-            <marker date="1506684986428" expanded="true" signature="20363:20446" ph="..." />
-            <marker date="1506684986428" expanded="true" signature="20576:20680" ph="..." />
-            <marker date="1506684986428" expanded="true" signature="21459:22633" ph="..." />
-            <marker date="1506684986428" expanded="true" signature="22012:22156" ph="..." />
-            <marker date="1506684986428" expanded="true" signature="22207:22290" ph="..." />
-            <marker date="1506684986428" expanded="true" signature="22458:22562" ph="..." />
-            <marker date="1506684986428" expanded="true" signature="22898:23321" ph="..." />
-            <marker date="1506684986428" expanded="true" signature="22953:23097" ph="..." />
-            <marker date="1506684986428" expanded="true" signature="23148:23231" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
