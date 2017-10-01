@@ -6,6 +6,9 @@ html{
     font-size: 16px;
     font-family: 'Ubuntu Mono', monospace;
 }
+body{
+    background-color: #f8f8f8;
+}
 .pointer:hover{
     cursor: pointer;
 }
@@ -76,16 +79,18 @@ header nav button:hover{
 }
 .table td{
     margin: 10px;
-    border-left: 1px solid #dfdfdf;
+    border-left: 1px solid #c5c5c5;
     width: 16%;
     text-align: center;
     padding: 7px 0 ;
-    border-top: 1px solid #e4e4e4;
+    border-top: 1px solid #c5c5c5;
 }
 .table td:first-child{
     border-left: none;
 }
-.table tr{
+.table tr:first-child td{
+    border-top: none;
+
 }
 .cloneLastItem{
     border-top: none !important;
@@ -97,7 +102,7 @@ header nav button:hover{
 #modal_form {
     width: 60%;
     height: 70vh;
-    background: #fff;
+    background: #f8f8f8;
     position: fixed;
     left: 0;
     top: 0;
@@ -197,4 +202,8 @@ header nav button:hover{
 }
 .active_href{
     color: #007fff !important;
+}
+.active-button span{
+    width: 30px;
+    height: 30px;
 }

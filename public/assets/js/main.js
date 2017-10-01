@@ -182,11 +182,11 @@ $(document).ready(function() {
 					<td class="name">${obj.lastName + ' ' + obj.firstName + ' ' + obj.surname}</td>
 					<td class="datePerson">${obj.datePerson}</td>
 					<td class="position">${obj.position}</td>
-					<td class="status">${ obj.status === true ? 'Работает': 'Уволен'}</td>
+					<td class="status"style="background-color: ${ obj.status === true ? '#fff': '#faeae7'};">${ obj.status === true ? 'Работает': 'Уволен'}</td>
 					<td class="active-button">
-						<span id="shift">Переместить</span><br>
-						<span id="change">Редактировать</span>
-						${obj.status === true ? "<span class='change_status'>Уволить</span>" : "<span class='change_status'>Востановить</span>"}
+						<span id="shift"><img src="/static/assets/img/revers.svg" alt="Перенести" title="Перенести сотрудника в другой отдел" height="30" width="30"></span><br>
+						<span id="change"><img src="/static/assets/img/edit.svg" alt="Изменить" title="Изменить данные сотрудника" height="30" width="30"></object></span>
+						${obj.status === true ? "<span class='change_status'><img src=\"/static/assets/img/remove-user.svg\" alt=\"Уволить\" title='Уволить сотрудника' height=\"30\" width=\"30\"></span>" : "<span class='change_status'><img src=\"/static/assets/img/add-user.png\" alt=\"Востановить\" title='Востановить сотрудника' height=\"30\" width=\"30\"></span>"}
 					</td>
 				</tr>
 			`);
@@ -451,10 +451,13 @@ $(document).ready(function() {
 					model.changeStatusPersonStore(idPerson);
 					if(textStatus === "Работает"){
                         $('#'+idPerson +' .status').text('Уволен');
-                        $('#'+idPerson + ' .change_status').text('Востановить')
-					}else{
+                        $('#'+idPerson + ' .change_status img').attr('src', '/static/assets/img/add-user.png');
+                        $('#'+idPerson + ' .status').css('background-color', '#faeae7');
+                    }else{
                         $('#'+idPerson +' .status').text('Работает');
-                        $('#'+idPerson + ' .change_status').text('Уволить')
+                        $('#'+idPerson + ' .change_status img').attr('src', '/static/assets/img/remove-user.svg');
+                        $('#'+idPerson + ' .status').css('background-color', '#fff');
+
                     }
 				}
             })
@@ -611,8 +614,8 @@ $(document).ready(function() {
                     changeYear:true,
                 });
             });
-        },
 
+        },
 
 	};
 	/************************************************Controller END**********************************************/
