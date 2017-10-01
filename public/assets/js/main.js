@@ -452,10 +452,12 @@ $(document).ready(function() {
 					if(textStatus === "Работает"){
                         $('#'+idPerson +' .status').text('Уволен');
                         $('#'+idPerson + ' .change_status img').attr('src', '/static/assets/img/add-user.png');
+                        $('#'+idPerson + ' .change_status img').attr('title', 'Востановить сотрудника сотрудника');
                         $('#'+idPerson + ' .status').css('background-color', '#faeae7');
                     }else{
                         $('#'+idPerson +' .status').text('Работает');
                         $('#'+idPerson + ' .change_status img').attr('src', '/static/assets/img/remove-user.svg');
+                        $('#'+idPerson + ' .change_status img').attr('title', 'Уволить сотрудника');
                         $('#'+idPerson + ' .status').css('background-color', '#fff');
 
                     }
