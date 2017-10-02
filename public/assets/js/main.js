@@ -39,6 +39,13 @@ $(document).ready(function() {
         event= (function () {
 
 			$('#sort_name').on('click', function () { // Сортировка ФИО
+                let state = $(this).attr('state');
+                if(state === 'sort'){
+                    $(this).attr('state','reSort');
+                }else{
+                    $(this).attr('state','sort');
+                }
+                localStorage.setItem('sort','name');
 				controller.sortName();
             });
 
@@ -47,7 +54,14 @@ $(document).ready(function() {
             });
 
 			$('#sort_status').on('click',function () { //Сортировка статуса
-				controller.sortStatus();
+                let state = $(this).attr('state');
+                if(state === 'sort'){
+                    $(this).attr('state','reSort');
+                }else{
+                    $(this).attr('state','sort');
+                }
+                localStorage.setItem('sort','status');
+                controller.sortStatus();
             });
 
             $('.modal').on('click', function() {
@@ -112,8 +126,13 @@ $(document).ready(function() {
             $('.buttonList').on('click','a', function() {
                 $('.buttonList').empty('a');
                 let numberList = $(this).text();
-                model.refreshAfteSort(false, numberList);     
-
+                if (localStorage.sort === 'name'){
+                    controller.sortName(numberList)
+                }else if(localStorage.sort === 'status'){
+                    controller.sortStatus(numberList);
+                }else{
+                    model.refreshAfteSort(false, numberList);
+                }
             })
 
         }());
@@ -209,8 +228,8 @@ $(document).ready(function() {
                 surA: statusA.surname.slice(0,1),
                 surB: statusB.surname.slice(0,1),
             };
-
-            if (localStorage.nameSort){
+            let state = $('#sort_name').attr('state');
+            if (state === 'sort'){
                 if (name.lastA < name.lastB) return -1;
                 if (name.lastA > name.lastB) return 1;
                 if(name.lastA === name.lastB){
@@ -242,7 +261,8 @@ $(document).ready(function() {
             return 0;
         },
         sortRulesStatus: function (depA,depB) {
-            if (localStorage.sortStatus){
+		    let state = $('#sort_status').attr('state');
+            if (state === 'sort'){
                 if (depA.status < depB.status) return -1;
                 if (depA.status > depB.status) return 1;
                 return 0;
@@ -256,7 +276,6 @@ $(document).ready(function() {
             $('.buttonList').empty('a');
             $('.table table > tr').detach();
             controller.addTableElements(person,numberList);
-
         },
         funcModelForm: function (cb) {  /// Функционал модального окна
             $('#overlay').fadeIn(400, function () {
@@ -464,34 +483,20 @@ $(document).ready(function() {
 				}
             })
         },
-        sortName: function () { // Сортирует таблицу по ФИО в localStore и view
+        sortName: function (numberList) { // Сортирует таблицу по ФИО в localStore и view
             let person = model.getLocalStoreJSON();
             person.sort(model.sortRulesName);
-            if(localStorage.nameSort){
-                console.log('sn true');
-                localStorage.setItem('nameSort','');
-            }else{
-                console.log('sn false');
-                localStorage.setItem('nameSort', true);
-            }
-            model.refreshAfteSort(person);
+            model.refreshAfteSort(person,numberList);
         },
         sortDeportment: function () {  //Сортировка объекта по отделу
             let person = model.getLocalStoreJSON();
             person.sort(model.sortRulesDeportment);
             model.refreshAfteSort(person);
         },
-		sortStatus: function () { // Сортировка объекта по статусу
+		sortStatus: function (numberList) { // Сортировка объекта по статусу
             let person = model.getLocalStoreJSON();
             person.sort(model.sortRulesStatus);
-            if(localStorage.sortStatus){
-                console.log('sn true');
-                localStorage.setItem('sortStatus','');
-            }else{
-                console.log('sn false');
-                localStorage.setItem('sortStatus', true);
-            }
-            model.refreshAfteSort(person);
+            model.refreshAfteSort(person,numberList);
         },
 		validateSelect: function () { // Динамическая подставка значений под селектор 
             let valSelector = $('#deportment_select').val();
@@ -622,6 +627,7 @@ $(document).ready(function() {
 	};
 	/************************************************Controller END**********************************************/
     view = (function () {
+        localStorage.setItem('sort','');
         controller.addTableElements();
         controller.changeStatusPerson();
         controller.search();
