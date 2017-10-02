@@ -50,6 +50,8 @@ $(document).ready(function() {
             });
 
 			$('#sort_deportment').on('click',function () { // Сортировка отдела
+                $(this).attr('state','sort');
+                localStorage.setItem('sort','deportment');
                 controller.sortDeportment();
             });
 
@@ -130,6 +132,8 @@ $(document).ready(function() {
                     controller.sortName(numberList)
                 }else if(localStorage.sort === 'status'){
                     controller.sortStatus(numberList);
+                }else if(localStorage.sort === 'deportment'){
+                    controller.sortDeportment(numberList);
                 }else{
                     model.refreshAfteSort(false, numberList);
                 }
@@ -488,10 +492,10 @@ $(document).ready(function() {
             person.sort(model.sortRulesName);
             model.refreshAfteSort(person,numberList);
         },
-        sortDeportment: function () {  //Сортировка объекта по отделу
+        sortDeportment: function (numberList) {  //Сортировка объекта по отделу
             let person = model.getLocalStoreJSON();
             person.sort(model.sortRulesDeportment);
-            model.refreshAfteSort(person);
+            model.refreshAfteSort(person,numberList);
         },
 		sortStatus: function (numberList) { // Сортировка объекта по статусу
             let person = model.getLocalStoreJSON();
