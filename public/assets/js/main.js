@@ -209,7 +209,7 @@ $(document).ready(function() {
 					<td class="active-button">
 						<span id="shift"><img src="/static/assets/img/revers.svg" alt="Перенести" title="Перенести сотрудника в другой отдел" height="30" width="30"></span><br>
 						<span id="change"><img src="/static/assets/img/edit.svg" alt="Изменить" title="Изменить данные сотрудника" height="30" width="30"></object></span>
-						${obj.status === true ? "<span class='change_status'><img src=\"/static/assets/img/remove-user.svg\" alt=\"Уволить\" title='Уволить сотрудника' height=\"30\" width=\"30\"></span>" : "<span class='change_status'><img src=\"/static/assets/img/add-user.png\" alt=\"Востановить\" title='Востановить сотрудника' height=\"30\" width=\"30\"></span>"}
+						${obj.status === true ? "<span class='change_status'><img src=\"/static/assets/img/remove-user.svg\" alt=\"Уволить\" title='Уволить сотрудника' height=\"30\" width=\"30\"></span>" : "<span class='change_status'><img src=\"/static/assets/img/add-user.png\" alt=\"Восстановить\" title='Восстановить сотрудника' height=\"30\" width=\"30\"></span>"}
 					</td>
 				</tr>
 			`);
@@ -475,7 +475,7 @@ $(document).ready(function() {
 					if(textStatus === "Работает"){
                         $('#'+idPerson +' .status').text('Уволен');
                         $('#'+idPerson + ' .change_status img').attr('src', '/static/assets/img/add-user.png');
-                        $('#'+idPerson + ' .change_status img').attr('title', 'Востановить сотрудника сотрудника');
+                        $('#'+idPerson + ' .change_status img').attr('title', 'Восстановить сотрудника сотрудника');
                         $('#'+idPerson + ' .status').css('background-color', '#faeae7');
                     }else{
                         $('#'+idPerson +' .status').text('Работает');
